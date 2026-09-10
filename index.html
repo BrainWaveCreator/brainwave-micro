@@ -73,14 +73,23 @@ section{padding:72px 0; border-bottom:1px solid var(--rule)}
 .col p{font-size:14.5px; color:var(--ink-2); margin:0}
 
 /* work */
-.work{display:grid; grid-template-columns:repeat(3,1fr); gap:26px 22px}
-@media (max-width:940px){.work{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:620px){.work{grid-template-columns:1fr}}
+.work{display:grid; grid-template-columns:repeat(2,1fr); gap:30px 24px}
+.work.vertrow{grid-template-columns:repeat(4,1fr); gap:24px 20px}
+@media (max-width:940px){.work.vertrow{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.work,.work.vertrow{grid-template-columns:1fr}}
+.grouphead{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3);
+  padding-bottom:10px; border-bottom:1px solid var(--rule); margin:44px 0 26px;
+}
+.grouphead:first-of-type{margin-top:0}
 .piece{display:flex; flex-direction:column}
 .frame{
   position:relative; width:100%; aspect-ratio:16/9; background:#111;
   border:1px solid var(--rule-2); overflow:hidden;
 }
+.frame.sq{aspect-ratio:1/1}
+.frame.vert{aspect-ratio:9/16}
 .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
 .piece .idx{
   font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em;
@@ -134,7 +143,7 @@ footer{padding:26px 0 40px; font-size:13px; color:var(--ink-3)}
     <a href="#top" aria-label="Brainwave Studio"><img class="mark" src="assets/logos/brainwave-ink.png" alt="Brainwave Studio"></a>
     <nav class="hnav">
       <a href="#work">Work</a>
-      <a href="#clients">Clients</a>
+      <a href="#clients">Local clients</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -148,7 +157,7 @@ footer{padding:26px 0 40px; font-size:13px; color:var(--ink-3)}
     <div class="stats">
       <div class="stat"><b>20 yrs</b><span>Directing commercials and music videos</span></div>
       <div class="stat"><b>20B+</b><span>Views on work we have directed</span></div>
-      <div class="stat"><b>3</b><span>Languages we produce in: English, Spanish, Portuguese</span></div>
+      <div class="stat"><b>3</b><span>Languages we can produce in: English, Spanish, Portuguese</span></div>
       <div class="stat"><b>Miami</b><span>Where we are, and where we shoot</span></div>
     </div>
   </div>
@@ -181,80 +190,94 @@ footer{padding:26px 0 40px; font-size:13px; color:var(--ink-3)}
     <div class="wrap">
       <div class="shead">
         <span class="label">Selected work</span>
-        <h2>A few things we have made</h2>
+        <h2>A few projects we worked on</h2>
+        <p>Commercial and campaign work, directed for brands and agencies.</p>
       </div>
 
       <!--
         ============================================================
-        TO ADD OR CHANGE A PIECE: copy one <article class="piece">
-        block, swap the Vimeo id in the iframe src, and edit the
-        title, meta and description. Delete any block you do not need.
-        Keep the count at 3 or 6 so the grid stays full.
+        TO ADD OR CHANGE A PIECE: copy an <article class="piece">
+        block, swap the Vimeo id in the iframe src, edit the title,
+        meta and description.
+        Frame classes: (none)=16:9, "frame vert"=9:16, "frame sq"=1:1
+        Keep counts at 4 so the rows stay full.
         ============================================================
       -->
 
-      <div class="work">
-
+      <p class="grouphead">Vertical, built for the feed</p>
+      <div class="work vertrow">
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225656755" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="L Oreal spot"></iframe></div>
+          <div class="frame vert"><iframe src="https://player.vimeo.com/video/1225695045?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Skin Associates"></iframe></div>
           <span class="idx">01</span>
-          <h3>L&rsquo;Or&eacute;al</h3>
-          <p class="meta">Commercial &middot; 15 sec</p>
-          <p class="desc">Beauty product spot cut for broadcast and paid social.</p>
+          <h3>Skin Associates</h3>
+          <p class="meta">Beauty &middot; 1:32</p>
+          <p class="desc">Treatment film shot vertical, cut for the feed.</p>
         </article>
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649241" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Enfagrow spot"></iframe></div>
+          <div class="frame vert"><iframe src="https://player.vimeo.com/video/1225693228?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Tom Ford"></iframe></div>
           <span class="idx">02</span>
-          <h3>Enfagrow</h3>
-          <p class="meta">Commercial &middot; 20 sec &middot; Mexico</p>
-          <p class="desc">Infant nutrition, shot for a parent audience across broadcast and digital.</p>
+          <h3>Tom Ford</h3>
+          <p class="meta">Brand content &middot; Miami &middot; 1:08</p>
+          <p class="desc">Talent-led piece with kinetic type built into the frame.</p>
         </article>
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649979" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Secret spot"></iframe></div>
+          <div class="frame vert"><iframe src="https://player.vimeo.com/video/1225693285?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Balmoral"></iframe></div>
           <span class="idx">03</span>
-          <h3>Secret</h3>
-          <p class="meta">Commercial</p>
-          <p class="desc">Brand campaign spot.</p>
+          <h3>Balmoral</h3>
+          <p class="meta">Automotive &middot; 1:04</p>
+          <p class="desc">Vehicle brand film, vertical from the first frame.</p>
         </article>
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225645301" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Casa Tua vertical"></iframe></div>
+          <div class="frame vert"><iframe src="https://player.vimeo.com/video/1225692691?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Dr. Apa"></iframe></div>
           <span class="idx">04</span>
-          <h3>Casa Tua</h3>
-          <p class="meta">Vertical &middot; Social</p>
-          <p class="desc">Shot vertical for the feed, with captions built in rather than added afterwards.</p>
+          <h3>Dr. Apa</h3>
+          <p class="meta">Talent-led &middot; 1:10</p>
+          <p class="desc">Natural light lifestyle piece for a personal brand.</p>
         </article>
-
-        <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225656657" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YOU Mobile Chicharito spot"></iframe></div>
-          <span class="idx">05</span>
-          <h3>YOU Mobile</h3>
-          <p class="meta">Commercial &middot; 30 sec &middot; Talent</p>
-          <p class="desc">Celebrity-led spot built around a single performance.</p>
-        </article>
-
-        <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1147077263" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YOU Mobile LA spot"></iframe></div>
-          <span class="idx">06</span>
-          <h3>YOU Mobile LA</h3>
-          <p class="meta">Commercial &middot; English</p>
-          <p class="desc">English-language cut of the campaign for a US audience.</p>
-        </article>
-
       </div>
 
-      <p style="margin-top:30px; font-size:14.5px; color:var(--ink-2)">More on request, including interview and documentary work, brand films and vertical campaign packages. Tell us what you are working on and we will send the closest thing we have made to it.</p>
+      <p class="grouphead">Broadcast and campaign</p>
+      <div class="work">
+        <article class="piece">
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1225656755?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="CeraVe"></iframe></div>
+          <span class="idx">05</span>
+          <h3>CeraVe</h3>
+          <p class="meta">Commercial &middot; 15 sec</p>
+          <p class="desc">Skincare product spot, cut for broadcast and paid social.</p>
+        </article>
+        <article class="piece">
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649241?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Enfagrow"></iframe></div>
+          <span class="idx">06</span>
+          <h3>Enfagrow</h3>
+          <p class="meta">Commercial &middot; 20 sec &middot; Mexico</p>
+          <p class="desc">Infant nutrition, shot for a parent audience in Spanish.</p>
+        </article>
+        <article class="piece">
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649979?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Secret"></iframe></div>
+          <span class="idx">07</span>
+          <h3>Secret</h3>
+          <p class="meta">Commercial &middot; Talent-led</p>
+          <p class="desc">Brand campaign built around a single performance.</p>
+        </article>
+        <article class="piece">
+          <div class="frame sq"><iframe src="https://player.vimeo.com/video/1225656657?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;pip=0&amp;dnt=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YO Mobile"></iframe></div>
+          <span class="idx">08</span>
+          <h3>YO Mobile</h3>
+          <p class="meta">Square 1:1 &middot; 30 sec &middot; Talent</p>
+          <p class="desc">Celebrity-led spot framed square for in-feed placement.</p>
+        </article>
+      </div>
+
+      <p style="margin-top:34px; font-size:14.5px; color:var(--ink-2)">More on request, including square and 1:1 campaign cuts, interview and documentary work, and full vertical packages. Tell us what you are working on and we will send the closest thing we have made to it.</p>
     </div>
   </section>
 
   <section id="clients">
     <div class="wrap">
       <div class="shead">
-        <span class="label">Clients</span>
-        <h2>Who we work with</h2>
-        <p>Restaurants, retail, insurance, construction, transportation and property, across Miami and beyond.</p>
+        <span class="label">Marketing, web and SEO</span>
+        <h2>Some of our local clients</h2>
+        <p>A separate side of the studio. These are Miami and South Florida businesses we run marketing, websites and SEO for. Restaurants, retail, insurance, construction, transportation and property.</p>
       </div>
       <div class="logos">
         <div class="logo"><img src="assets/logos/nofault.png" alt="1-800-NO-FAULT"></div>
@@ -280,7 +303,6 @@ footer{padding:26px 0 40px; font-size:13px; color:var(--ink-3)}
         </div>
         <div class="cdet">
           <a href="mailto:hello@brainwavestudio.io">hello@brainwavestudio.io</a><br>
-          <a href="tel:+13058018512">305-801-8512</a><br>
           <a href="https://brainwavestudio.io">brainwavestudio.io</a><br>
           <span style="color:var(--ink-3)">Miami, Florida</span>
         </div>
