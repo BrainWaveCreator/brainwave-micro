@@ -73,14 +73,22 @@ section{padding:72px 0; border-bottom:1px solid var(--rule)}
 .col p{font-size:14.5px; color:var(--ink-2); margin:0}
 
 /* work */
-.work{display:grid; grid-template-columns:repeat(3,1fr); gap:26px 22px}
-@media (max-width:940px){.work{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:620px){.work{grid-template-columns:1fr}}
+.work{display:grid; grid-template-columns:repeat(2,1fr); gap:30px 24px}
+.work.social{grid-template-columns:repeat(2,minmax(0,340px)); justify-content:start; margin-top:8px}
+@media (max-width:620px){.work,.work.social{grid-template-columns:1fr}}
+.grouphead{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3);
+  padding-bottom:10px; border-bottom:1px solid var(--rule); margin:44px 0 26px;
+}
+.grouphead:first-of-type{margin-top:0}
 .piece{display:flex; flex-direction:column}
 .frame{
   position:relative; width:100%; aspect-ratio:16/9; background:#111;
   border:1px solid var(--rule-2); overflow:hidden;
 }
+.frame.sq{aspect-ratio:1/1}
+.frame.vert{aspect-ratio:9/16}
 .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
 .piece .idx{
   font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em;
@@ -187,66 +195,65 @@ footer{padding:26px 0 40px; font-size:13px; color:var(--ink-3)}
 
       <!--
         ============================================================
-        TO ADD OR CHANGE A PIECE: copy one <article class="piece">
-        block, swap the Vimeo id in the iframe src, and edit the
-        title, meta and description. Delete any block you do not need.
-        Keep the count at 3 or 6 so the grid stays full.
+        TO ADD OR CHANGE A PIECE: copy an <article class="piece">
+        block, swap the Vimeo id in the iframe src, edit the title,
+        meta and description.
+        Frame classes: (none)=16:9, "frame sq"=1:1, "frame vert"=9:16
+        Keep counts even so the rows stay full.
         ============================================================
       -->
 
+      <p class="grouphead">Broadcast and campaign</p>
       <div class="work">
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225656755" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="L Oreal spot"></iframe></div>
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1225656755" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="CeraVe"></iframe></div>
           <span class="idx">01</span>
-          <h3>L&rsquo;Or&eacute;al</h3>
+          <h3>CeraVe</h3>
           <p class="meta">Commercial &middot; 15 sec</p>
-          <p class="desc">Beauty product spot cut for broadcast and paid social.</p>
+          <p class="desc">Skincare product spot, cut for broadcast and paid social.</p>
         </article>
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649241" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Enfagrow spot"></iframe></div>
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649241" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Enfagrow"></iframe></div>
           <span class="idx">02</span>
           <h3>Enfagrow</h3>
           <p class="meta">Commercial &middot; 20 sec &middot; Mexico</p>
-          <p class="desc">Infant nutrition, shot for a parent audience across broadcast and digital.</p>
+          <p class="desc">Infant nutrition, shot for a parent audience in Spanish.</p>
         </article>
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649979" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Secret spot"></iframe></div>
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1225649979" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Secret"></iframe></div>
           <span class="idx">03</span>
           <h3>Secret</h3>
-          <p class="meta">Commercial</p>
-          <p class="desc">Brand campaign spot.</p>
+          <p class="meta">Commercial &middot; Talent-led</p>
+          <p class="desc">Brand campaign built around a single performance.</p>
         </article>
-
         <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225645301" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Casa Tua vertical"></iframe></div>
+          <div class="frame"><iframe src="https://player.vimeo.com/video/1147077263" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YOU Mobile LA"></iframe></div>
           <span class="idx">04</span>
-          <h3>Casa Tua</h3>
-          <p class="meta">Vertical &middot; Social</p>
-          <p class="desc">Shot vertical for the feed, with captions built in rather than added afterwards.</p>
-        </article>
-
-        <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1225656657" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YOU Mobile Chicharito spot"></iframe></div>
-          <span class="idx">05</span>
-          <h3>YOU Mobile</h3>
-          <p class="meta">Commercial &middot; 30 sec &middot; Talent</p>
-          <p class="desc">Celebrity-led spot built around a single performance.</p>
-        </article>
-
-        <article class="piece">
-          <div class="frame"><iframe src="https://player.vimeo.com/video/1147077263" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YOU Mobile LA spot"></iframe></div>
-          <span class="idx">06</span>
           <h3>YOU Mobile LA</h3>
           <p class="meta">Commercial &middot; English</p>
-          <p class="desc">English-language cut of the campaign for a US audience.</p>
+          <p class="desc">Black and white campaign film for a US audience.</p>
         </article>
-
       </div>
 
-      <p style="margin-top:30px; font-size:14.5px; color:var(--ink-2)">More on request, including interview and documentary work, brand films and vertical campaign packages. Tell us what you are working on and we will send the closest thing we have made to it.</p>
+      <p class="grouphead">Built for the feed</p>
+      <div class="work social">
+        <article class="piece">
+          <div class="frame sq"><iframe src="https://player.vimeo.com/video/1225656657" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="YOU Mobile"></iframe></div>
+          <span class="idx">05</span>
+          <h3>YOU Mobile</h3>
+          <p class="meta">Square 1:1 &middot; Talent</p>
+          <p class="desc">Celebrity-led spot framed square for in-feed placement.</p>
+        </article>
+        <article class="piece">
+          <div class="frame vert"><iframe src="https://player.vimeo.com/video/1225645301" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="JIL Janitorial"></iframe></div>
+          <span class="idx">06</span>
+          <h3>JIL Janitorial</h3>
+          <p class="meta">Vertical 9:16 &middot; Shot at Casa Tua</p>
+          <p class="desc">Vertical from the start, with captions built in rather than added afterwards.</p>
+        </article>
+      </div>
+
+      <p style="margin-top:34px; font-size:14.5px; color:var(--ink-2)">More on request, including interview and documentary work, brand films and full vertical campaign packages. Tell us what you are working on and we will send the closest thing we have made to it.</p>
     </div>
   </section>
 
